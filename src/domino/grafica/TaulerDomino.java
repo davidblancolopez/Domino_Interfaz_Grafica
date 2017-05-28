@@ -25,7 +25,7 @@ import javax.swing.JTextField;
 public class TaulerDomino extends JFrame implements ActionListener{
     private JMenuBar mb;
     private JMenu menu1;
-    private JMenuItem mi1, mi2, mi3;
+    private JMenuItem menuItem1, menuItem2;
     public JTextField textfield1;
     public JLabel label1;
     public JButton boton1;
@@ -36,12 +36,12 @@ public class TaulerDomino extends JFrame implements ActionListener{
         setJMenuBar(mb);
         menu1 = new JMenu("Opciones");
         mb.add(menu1);
-        mi1 = new JMenuItem("Jugar!");
-        mi1.addActionListener(this);
-        menu1.add(mi1);
-        mi2 = new JMenuItem("Instrucciones modo de juego");
-        mi2.addActionListener(this);
-        menu1.add(mi2);
+        menuItem1 = new JMenuItem("Jugar");
+        menuItem1.addActionListener(this);
+        menu1.add(menuItem1);
+        menuItem2 = new JMenuItem("Acerca de");
+        menuItem2.addActionListener(this);
+        menu1.add(menuItem2);
         
         
     }
@@ -49,34 +49,22 @@ public class TaulerDomino extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         Container f = this.getContentPane();
-       
-        if (e.getSource() == mi1) {
-            
-            f.setBackground(new Color(204, 255, 153));
-            
-            JButton bot1 = new JButton("Jugar Modo 1");
-            bot1.setBounds(100, 10, 200, 30);
-            add(bot1);
-            
-            JButton bot2 = new JButton("Jugar Modo 2");
-            bot2.setBounds(100, 40, 200, 30);
-            add(bot2);
-            
-            
-            bot1.addActionListener(new java.awt.event.ActionListener() {
-                
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                
-                ControlText control = new ControlText();
-                control.JugarJoc();
-                
-            }
 
-        });
-            }
-        if (e.getSource() == mi2) {
-            f.setBackground(new Color(0, 255, 0));
+        if (e.getSource() == menuItem1) {
+            f.removeAll();
+            menuItem1.removeAll();
+            f.setBackground(new Color(204, 255, 153));
+
+                    ControlText gesD = new ControlText();
+                    gesD.JugarJoc();
+
         }
+        /*if (e.getSource() == mi2) {
+
+            Instrucciones inst = new Instrucciones();
+            inst.setVisible(true);
+
+        }*/
     }
     
     
