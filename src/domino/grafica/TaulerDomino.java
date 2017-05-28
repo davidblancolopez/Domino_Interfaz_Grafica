@@ -87,8 +87,8 @@ public class TaulerDomino extends JFrame implements ActionListener {
 
     public void MostrarFitxasJugador(ArrayList<Fitxa> fitxesJug1, ArrayList<Fitxa> fitxesJug2, ArrayList<Fitxa> fitxesJug3, ArrayList<Fitxa> fitxesJug4) {
 
-        ImageIcon iconB = new ImageIcon("imagenes/backv.gif");
-        ImageIcon iconB2 = new ImageIcon("imagenes/back.gif");
+        ImageIcon iconB = new ImageIcon("Assets/NegreV.png");
+        ImageIcon iconB2 = new ImageIcon("Assets/Negre.png");
 
         for (int i = 0; i < fitxesJug1.size(); i++) {
             JLabel lblT = new JLabel(" ");
@@ -96,7 +96,6 @@ public class TaulerDomino extends JFrame implements ActionListener {
             lblT.setIcon(iconB);
             pNord.add(lblT, BorderLayout.NORTH);
             PSud.setLayout(new GridLayout(1, 8));
-            System.out.println("**" + fitxesJug1.get(i).valors[0] + "|" + fitxesJug1.get(i).valors[1] + "**");
         }
 
         for (int i = 0; i < fitxesJug2.size(); i++) {
@@ -105,7 +104,6 @@ public class TaulerDomino extends JFrame implements ActionListener {
             lblT.setIcon(iconB2);
             PEst.add(lblT, BorderLayout.WEST);
             PEst.setLayout(new GridLayout(8, 1));
-
         }
 
         for (int i = 0; i < fitxesJug3.size(); i++) {
@@ -118,7 +116,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
         }
 
         for (int i = 0; i < fitxesJug4.size(); i++) {
-            ImageIcon icon = new ImageIcon("imagenes/" + fitxesJug4.get(i).valors[0] + fitxesJug4.get(i).valors[1] + "v.gif");
+            ImageIcon icon = new ImageIcon("Assets/" + fitxesJug4.get(i).valors[0] + fitxesJug4.get(i).valors[1] + "V.gif");
             JLabel lblT = new JLabel(" ");
             lblT.setPreferredSize(new Dimension(50, 50));
             lblT.setIcon(icon);
