@@ -34,7 +34,7 @@ public class Menu extends JFrame implements ActionListener{
         setLayout(null);
         mb = new JMenuBar();
         setJMenuBar(mb);
-        menu1 = new JMenu("Opciones");
+        menu1 = new JMenu("Opcions");
         mb.add(menu1);
         menuItem1 = new JMenuItem("Jugar");
         menuItem1.addActionListener(this);
@@ -55,8 +55,8 @@ public class Menu extends JFrame implements ActionListener{
             menuItem1.removeAll();
             f.setBackground(new Color(204, 255, 153));
 
-                    ControlText gesD = new ControlText();
-                    gesD.JugarJoc();
+                    ControlText control = new ControlText();
+                    control.JugarJoc();
 
         }
         if (e.getSource() == menuItem2) {
