@@ -59,12 +59,12 @@ public class Menu extends JFrame implements ActionListener{
                     gesD.JugarJoc();
 
         }
-        /*if (e.getSource() == mi2) {
+        if (e.getSource() == menuItem2) {
 
-            Instrucciones inst = new Instrucciones();
+            AcercaDe inst = new AcercaDe();
             inst.setVisible(true);
 
-        }*/
+        }
     }
     
     
