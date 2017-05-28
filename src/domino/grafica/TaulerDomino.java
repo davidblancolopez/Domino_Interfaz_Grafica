@@ -39,14 +39,6 @@ public class TaulerDomino extends JFrame implements ActionListener {
         configuracio();
         this.pack();
         this.setVisible(true);
-        //boolean cx = num.isEmpty();
-        System.out.println(num);
-        if (num.equals("4")) {
-            System.out.println("Aqui hay algo :D" + num);
-        } else {
-            System.out.println("Aqui no hay na");
-        }
-
     }
 
     public void configuracio() {
@@ -69,22 +61,22 @@ public class TaulerDomino extends JFrame implements ActionListener {
 
     }
 
-    public void MostrarNombreJugador(String string, String string0, String string1, String string2) {
+    public void MostrarNombreJugador(String jug1, String jug2, String jug3, String jug4) {
 
         PEst.removeAll();
         POest.removeAll();
         pNord.removeAll();
         PSud.removeAll();
-        JLabel lbl1 = new JLabel("Jug1:" + string);
+        JLabel lbl1 = new JLabel("Jugador 1:" + jug1);
         pNord.add(lbl1, BorderLayout.NORTH);
 
-        JLabel lbl2 = new JLabel("Jug2:" + string0);
+        JLabel lbl2 = new JLabel("Jugador 2:" + jug2);
         PEst.add(lbl2, BorderLayout.WEST);
 
-        JLabel lbl3 = new JLabel("Jug3:" + string1);
+        JLabel lbl3 = new JLabel("Jugador 3:" + jug3);
         POest.add(lbl3, BorderLayout.EAST);
 
-        JLabel lbl4 = new JLabel("Jug4:" + string2);
+        JLabel lbl4 = new JLabel("Jugador 4:" + jug4);
         PSud.add(lbl4, BorderLayout.SOUTH);
     }
 
