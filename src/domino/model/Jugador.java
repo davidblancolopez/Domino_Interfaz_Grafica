@@ -5,14 +5,14 @@ import java.util.List;
 
 public  class Jugador {
     public String nom;//Al principio era private
-    public List<Fitxa> fitxes;
+    public ArrayList<Fitxa> fitxes;
 
     public Jugador( String nom) {      
         this.nom = nom;
         fitxes = new ArrayList();
     } 
 
-    public Jugador(String nom, List<Fitxa> fitxes) {
+    public Jugador(String nom, ArrayList<Fitxa> fitxes) {
         this.nom = nom;
         this.fitxes = fitxes;
     }
@@ -22,11 +22,11 @@ public  class Jugador {
         return nom;
     }
 
-    public List<Fitxa> getFitxes() {
+    public ArrayList<Fitxa> getFitxes() {
        return fitxes;
     }  
 
-    public void setFitxes(List<Fitxa> fitxes) {
+    public void setFitxes(ArrayList<Fitxa> fitxes) {
         this.fitxes = fitxes;
     }
     
