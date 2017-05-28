@@ -25,16 +25,13 @@ public class TaulerDomino extends JFrame implements ActionListener {
     private Joc joc;
     private Torn torn;
 
-    public TaulerDomino() {
-        super("Exemple BorderLayout");
+    public TaulerDomino() { 
         configuracio();
         this.pack();
         this.setVisible(true);
     }
 
-    TaulerDomino(String num, String fitx) {
-
-        super("Exemple BorderLayout");
+    TaulerDomino(String num, String fitx) {        
         configuracio();
         this.pack();
         this.setVisible(true);
