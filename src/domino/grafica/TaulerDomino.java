@@ -21,10 +21,10 @@ import javax.swing.JPanel;
 
 public class TaulerDomino extends JFrame implements ActionListener {
 
-    private JPanel pNord, pImatges, PSud, PEst, POest, pCenter;
+    private JPanel pNord, PSud, PEst, POest, pCenter;
     public Scanner lector = new Scanner(System.in);
-    private Joc joc;
-    private Torn torn;
+//    private Joc joc;
+//    private Torn torn;
 
     public TaulerDomino() { 
         configuracio();
@@ -98,7 +98,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
 
         for (int i = 0; i < fitxesJug1.size(); i++) {
             JLabel lblT = new JLabel(" ");
-            lblT.setPreferredSize(new Dimension(50, 50));
+            lblT.setPreferredSize(new Dimension(10, 10));
             lblT.setIcon(iconB);
             pNord.add(lblT, BorderLayout.NORTH);
             PSud.setLayout(new GridLayout(1, 8));
@@ -106,7 +106,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
 
         for (int i = 0; i < fitxesJug2.size(); i++) {
             JLabel lblT = new JLabel(" ");
-            lblT.setPreferredSize(new Dimension(50, 50));
+            lblT.setPreferredSize(new Dimension(10, 10));
             lblT.setIcon(iconB2);
             PEst.add(lblT, BorderLayout.WEST);
             PEst.setLayout(new GridLayout(8, 1));
@@ -114,7 +114,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
 
         for (int i = 0; i < fitxesJug3.size(); i++) {
             JLabel lblT = new JLabel(" ");
-            lblT.setPreferredSize(new Dimension(50, 50));
+            lblT.setPreferredSize(new Dimension(10, 10));
             lblT.setIcon(iconB2);
             POest.add(lblT, BorderLayout.EAST);
             POest.setLayout(new GridLayout(8, 1));
@@ -124,7 +124,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
         for (int i = 0; i < fitxesJug4.size(); i++) {
             ImageIcon icon = new ImageIcon("Assets/" + fitxesJug4.get(i).valors[0] + fitxesJug4.get(i).valors[1] + "V.png");
             JLabel lblT = new JLabel(" ");
-            lblT.setPreferredSize(new Dimension(50, 50));
+            lblT.setPreferredSize(new Dimension(10, 10));
             lblT.setIcon(icon);
             PSud.add(lblT, BorderLayout.SOUTH);
             PSud.setLayout(new GridLayout(1, 8));
@@ -214,7 +214,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
          * Bucle per a emplenar les fitxes amb les fitxes del jugador.
          */
         for (int i = 0; i < fitxes.size(); i++) {
-            ImageIcon icon = new ImageIcon("Assets/" + fitxes.get(i).valors[0] + fitxes.get(i).valors[1] + ".png");
+            ImageIcon icon = new ImageIcon("Assets/" + fitxes.get(i).valors[0] + fitxes.get(i).valors[1] + "V.png");
             imatges[i] = icon;
         }
         int pos = JOptionPane.showOptionDialog(null, "Selecciona una fitxa: ", "OPCIONS", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, imatges, imatges[0]);

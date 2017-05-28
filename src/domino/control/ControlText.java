@@ -92,7 +92,7 @@ public class ControlText {
      */
     public void recollirNomJugadors() {
         for (int i = 0; i < 4; i++) {
-            noms[i] = JOptionPane.showInputDialog("Introduce nombre jugador " + i + ":");
+            noms[i] = JOptionPane.showInputDialog("Introduce nombre jugador " + i + 1 + ":");
         }
     }
 
