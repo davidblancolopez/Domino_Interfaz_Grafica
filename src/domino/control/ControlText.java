@@ -35,14 +35,16 @@ public class ControlText {
         joc.iniciar(noms);
 
         torn.inicial();
-        
+
         vistaDomino = new TaulerDomino();
-        
+
         while (!joc.isFinalitzat()) {
 
             vistaDomino.MostrarNombreJugador(noms[0], noms[1], noms[2], noms[3]);
             vistaDomino.MostrarFitxesJugador(joc.jugadors[0].getFitxes(), joc.jugadors[1].getFitxes(), joc.jugadors[2].getFitxes(), joc.jugadors[3].getFitxes());
             vistaDomino.MostrarFitxesTaula(joc.getFitxesJugades());
+
+            respostaOpcioMenu();
 
             joc.actualitzarEstat();
 
@@ -52,16 +54,7 @@ public class ControlText {
         vistaDomino.MostrarFitxesTaula(joc.getFitxesJugades());
         vistaDomino.guanyador(joc.getGuanyador());
         System.out.println(joc.getGuanyador());
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         /*
         //Actualitzem l'estat del joc.
         joc.actualitzarEstat();
@@ -92,7 +85,6 @@ public class ControlText {
         } while (!joc.isFinalitzat());
 
         vText.imprimirGuanyador(joc.trobarGuanyador());*/
-
     }
 
     /**
@@ -107,7 +99,7 @@ public class ControlText {
     /**
      * Metode de resposta del menú de jugada.
      */
-     public void respostaOpcioMenu() {
+    public void respostaOpcioMenu() {
 
         String accio = vistaDomino.mostraMenu();
         System.out.println(accio);
@@ -133,12 +125,12 @@ public class ControlText {
         int p1;
         boolean extrem, correcte;
 
-       p1 = vistaDomino.elejirFitxa(joc.jugadors[joc.getTorn()].getFitxes());
+        p1 = vistaDomino.elejirFitxa(joc.jugadors[joc.getTorn()].getFitxes());
         f = joc.jugadors[joc.getTorn()].getFitxes().get(p1);
         extrem = vistaDomino.elejirLado();
 
         correcte = torn.colocarUnaFitxa(f, extrem);
-        
+
     }
 
     /**
@@ -181,5 +173,4 @@ public class ControlText {
 
         return correcte;
     }*/
-
 }
