@@ -66,17 +66,17 @@ public class TaulerDomino extends JFrame implements ActionListener {
         POest.removeAll();
         pNord.removeAll();
         PSud.removeAll();
-        JLabel lbl1 = new JLabel("Jugador 1:" + jug1);
-        pNord.add(lbl1, BorderLayout.NORTH);
+        JLabel label1 = new JLabel("Jugador 1:" + jug1);
+        pNord.add(label1, BorderLayout.NORTH);
 
-        JLabel lbl2 = new JLabel("Jugador 2:" + jug2);
-        PEst.add(lbl2, BorderLayout.WEST);
+        JLabel label2 = new JLabel("Jugador 2:" + jug2);
+        PEst.add(label2, BorderLayout.WEST);
 
-        JLabel lbl3 = new JLabel("Jugador 3:" + jug3);
-        POest.add(lbl3, BorderLayout.EAST);
+        JLabel label3 = new JLabel("Jugador 3:" + jug3);
+        POest.add(label3, BorderLayout.EAST);
 
-        JLabel lbl4 = new JLabel("Jugador 4:" + jug4);
-        PSud.add(lbl4, BorderLayout.SOUTH);
+        JLabel label4 = new JLabel("Jugador 4:" + jug4);
+        PSud.add(label4, BorderLayout.SOUTH);
     }
 
     public String MostrarTurnoJugador(Jugador jugador) {
