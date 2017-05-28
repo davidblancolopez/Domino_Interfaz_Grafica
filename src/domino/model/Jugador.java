@@ -2,7 +2,7 @@ package domino.model;
 
 import java.util.ArrayList;
 
-public  class Jugador {
+public class Jugador {
     public String nom;//Al principio era private
     public ArrayList<Fitxa> fitxes;
 

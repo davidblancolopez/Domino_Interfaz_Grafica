@@ -107,67 +107,44 @@ public class ControlText {
     /**
      * Metode de resposta del menú de jugada.
      */
-    public void respostaMenuJugada() {
-        int opcio = 0;
-        //Mostrem el menú de jugades disponibles per al jugador.
-        opcio = vText.menu();
+     public void respostaOpcioMenu() {
 
-        switch (opcio) {
-            case 1:
-                do {
-                    boolean correcte = posar1Fitxa();
-                    if (correcte) {
-                        break;
-                    }
-                } while (true);
+        String accio = vistaDomino.mostraMenu();
+        System.out.println(accio);
+        switch (accio) {
+            case "1":
+                posar1Fitxa();
                 break;
-            case 2:
-                do {
-                    boolean correcte = posar2Dobles();
-                    if (correcte) {
-                        break;
-                    }
-                } while (true);
-                break;
-            case 3:
+            case "0":
                 torn.passar();
                 break;
             default:
-                System.out.println("Opció incorrecta.");
-                break;
+                respostaOpcioMenu();
+
         }
     }
 
     /**
      * Metode per jugada de 1 fitza.
      */
-    public boolean posar1Fitxa() {
+    public void posar1Fitxa() {
         //Declaració de variables.
         Fitxa f;
         int p1;
         boolean extrem, correcte;
 
-        //Fitxa.
-        //Agafem la posició amb un int.
-        p1 = vText.demanarFitxaJugador(joc.jugadors[joc.getTorn()].getFitxes());
-        
-        //Agafem la fitxa que correspon fent servir el int anterior.
+       p1 = vistaDomino.elejirFitxa(joc.jugadors[joc.getTorn()].getFitxes());
         f = joc.jugadors[joc.getTorn()].getFitxes().get(p1);
-        
-        //Agafem l'extrem on es vol posar la ficha amb un boolean,
-        //si es vol a l'esquerra serà true sino sera false.
-        extrem = vText.demanarCostat();
+        extrem = vistaDomino.elejirLado();
 
-        //Cridem al metode que col·loca la fitxa.
         correcte = torn.colocarUnaFitxa(f, extrem);
-
-        return correcte;
+        
     }
 
     /**
      * Metode per a posar 2 dobles.
      */
-    public boolean posar2Dobles() {
+    /*public boolean posar2Dobles() {
         //Declaració de variables.
         Fitxa d1, d2;
         int p1, p2;
@@ -203,6 +180,6 @@ public class ControlText {
         correcte = torn.colocarDosDobles(d1, extremP1, d2, extremP2);
 
         return correcte;
-    }
+    }*/
 
 }
