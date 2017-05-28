@@ -5,6 +5,7 @@ import domino.model.Joc;
 import domino.model.Jugador;
 import domino.model.Torn;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -220,7 +221,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
         return pos;
     }
 
-    public void decirGanador(Jugador guanyador) {
+    public void guanyador(Jugador guanyador) {
 
         PEst.updateUI();
         POest.updateUI();
@@ -233,7 +234,9 @@ public class TaulerDomino extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (e.getActionCommand().equals("Color")) {
+            this.pNord.setBackground(Color.green);
+        }
     }
 
 }

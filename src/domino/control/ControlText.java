@@ -50,7 +50,7 @@ public class ControlText {
         vistaDomino.MostrarNombreJugador(noms[0], noms[1], noms[2], noms[3]);
         vistaDomino.MostrarFitxesJugador(joc.jugadors[0].getFitxes(), joc.jugadors[1].getFitxes(), joc.jugadors[2].getFitxes(), joc.jugadors[3].getFitxes());
         vistaDomino.MostrarFitxesTaula(joc.getFitxesJugades());
-        vistaDomino.decirGanador(joc.getGuanyador());
+        vistaDomino.guanyador(joc.getGuanyador());
         System.out.println(joc.getGuanyador());
         
         
