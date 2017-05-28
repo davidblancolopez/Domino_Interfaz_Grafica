@@ -93,7 +93,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
      * @param fitxesJug3
      * @param fitxesJug4
      */
-    public void MostrarFitxasJugador(ArrayList<Fitxa> fitxesJug1, ArrayList<Fitxa> fitxesJug2, ArrayList<Fitxa> fitxesJug3, ArrayList<Fitxa> fitxesJug4) {
+    public void MostrarFitxesJugador(ArrayList<Fitxa> fitxesJug1, ArrayList<Fitxa> fitxesJug2, ArrayList<Fitxa> fitxesJug3, ArrayList<Fitxa> fitxesJug4) {
 
         ImageIcon iconB = new ImageIcon("Assets/NegreV.png");
         ImageIcon iconB2 = new ImageIcon("Assets/Negre.png");

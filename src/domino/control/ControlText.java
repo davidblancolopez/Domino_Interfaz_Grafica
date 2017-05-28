@@ -1,5 +1,6 @@
 package domino.control;
 
+import domino.grafica.TaulerDomino;
 import domino.model.Fitxa;
 import domino.model.Joc;
 import domino.model.Torn;
@@ -12,6 +13,7 @@ public class ControlText {
 
     private Joc joc;
     private VistaText vText;
+    private TaulerDomino vistaDomino;
     private Torn torn;
     private Jugador jugador;
     public String noms[] = new String[4];//VARIABLE posada
@@ -33,7 +35,35 @@ public class ControlText {
         joc.iniciar(noms);
 
         torn.inicial();
+        
+        vistaDomino = new TaulerDomino();
+        
+        while (!joc.isFinalitzat()) {
 
+            vistaDomino.MostrarNombreJugador(noms[0], noms[1], noms[2], noms[3]);
+            vistaDomino.MostrarFitxesJugador(joc.jugadors[0].getFitxes(), joc.jugadors[1].getFitxes(), joc.jugadors[2].getFitxes(), joc.jugadors[3].getFitxes());
+            vistaDomino.MostrarFitxesTaula(joc.getFitxesJugades());
+            String turnoJug = vistaDomino.MostrarTurnoJugador(joc.getJugadors()[joc.getTorn()]);
+
+            joc.actualitzarEstat();
+
+        }
+        vistaDomino.MostrarNombreJugador(noms[0], noms[1], noms[2], noms[3]);
+        vistaDomino.MostrarFitxesJugador(joc.jugadors[0].getFitxes(), joc.jugadors[1].getFitxes(), joc.jugadors[2].getFitxes(), joc.jugadors[3].getFitxes());
+        vistaDomino.MostrarFitxesTaula(joc.getFitxesJugades());
+        vistaDomino.decirGanador(joc.getGuanyador());
+        System.out.println(joc.getGuanyador());
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*
         //Actualitzem l'estat del joc.
         joc.actualitzarEstat();
 
@@ -62,7 +92,8 @@ public class ControlText {
             }
         } while (!joc.isFinalitzat());
 
-        vText.imprimirGuanyador(joc.trobarGuanyador());
+        vText.imprimirGuanyador(joc.trobarGuanyador());*/
+
     }
 
     /**
@@ -70,7 +101,7 @@ public class ControlText {
      */
     public void recollirNomJugadors() {
         for (int i = 0; i < 4; i++) {
-            noms[i] = JOptionPane.showInputDialog("Introduce tu nombre: ");
+            noms[i] = JOptionPane.showInputDialog("Introduce nombre jugador " + i + ":");
         }
     }
 
