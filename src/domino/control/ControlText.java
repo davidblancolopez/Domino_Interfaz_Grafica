@@ -6,6 +6,7 @@ import domino.model.Torn;
 import domino.model.Jugador;
 import domino.vista.VistaText;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class ControlText {
 
@@ -69,7 +70,7 @@ public class ControlText {
      */
     public void recollirNomJugadors() {
         for (int i = 0; i < 4; i++) {
-            noms[i] = vText.demanarNomJugador();
+            noms[i] = JOptionPane.showInputDialog("Introduce tu nombre: ");
         }
     }
 

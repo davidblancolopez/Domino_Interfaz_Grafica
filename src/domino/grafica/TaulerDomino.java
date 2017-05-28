@@ -1,71 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domino.grafica;
 
-import domino.control.ControlText;
-import java.awt.Color;
-import java.awt.Container;
+import domino.model.Joc;
+import domino.model.Torn;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
+import java.util.Scanner;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JTextField;
+import javax.swing.JPanel;
 
-/**
- *
- * @author dblan
- */
-public class TaulerDomino extends JFrame implements ActionListener{
-    private JMenuBar mb;
-    private JMenu menu1;
-    private JMenuItem menuItem1, menuItem2;
-    public JTextField textfield1;
-    public JLabel label1;
-    public JButton boton1;
+public class TaulerDomino extends JFrame implements ActionListener {
 
-    public TaulerDomino() {
-        setLayout(null);
-        mb = new JMenuBar();
-        setJMenuBar(mb);
-        menu1 = new JMenu("Opciones");
-        mb.add(menu1);
-        menuItem1 = new JMenuItem("Jugar");
-        menuItem1.addActionListener(this);
-        menu1.add(menuItem1);
-        menuItem2 = new JMenuItem("Acerca de");
-        menuItem2.addActionListener(this);
-        menu1.add(menuItem2);
-        
-        
-    }
+    private JPanel pNord, pImatges, PSud, PEst, POest, pCenter;
+    public Scanner lector = new Scanner(System.in);
+    private Joc joc;
+    private Torn torn;
+    
+    
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Container f = this.getContentPane();
-
-        if (e.getSource() == menuItem1) {
-            f.removeAll();
-            menuItem1.removeAll();
-            f.setBackground(new Color(204, 255, 153));
-
-                    ControlText gesD = new ControlText();
-                    gesD.JugarJoc();
-
-        }
-        /*if (e.getSource() == mi2) {
-
-            Instrucciones inst = new Instrucciones();
-            inst.setVisible(true);
-
-        }*/
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
 }
