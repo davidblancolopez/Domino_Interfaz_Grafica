@@ -85,21 +85,21 @@ public class TaulerDomino extends JFrame implements ActionListener {
         return jugador.nom;
     }
 
-    public void MostrarFitxasJugador(ArrayList<Fitxa> fitxes, ArrayList<Fitxa> fitxes0, ArrayList<Fitxa> fitxes1, ArrayList<Fitxa> fitxes2) {
+    public void MostrarFitxasJugador(ArrayList<Fitxa> fitxesJug1, ArrayList<Fitxa> fitxesJug2, ArrayList<Fitxa> fitxesJug3, ArrayList<Fitxa> fitxesJug4) {
 
         ImageIcon iconB = new ImageIcon("imagenes/backv.gif");
         ImageIcon iconB2 = new ImageIcon("imagenes/back.gif");
 
-        for (int i = 0; i < fitxes.size(); i++) {
+        for (int i = 0; i < fitxesJug1.size(); i++) {
             JLabel lblT = new JLabel(" ");
             lblT.setPreferredSize(new Dimension(50, 50));
             lblT.setIcon(iconB);
             pNord.add(lblT, BorderLayout.NORTH);
             PSud.setLayout(new GridLayout(1, 8));
-            System.out.println("**" + fitxes.get(i).valors[0] + "|" + fitxes.get(i).valors[1] + "**");
+            System.out.println("**" + fitxesJug1.get(i).valors[0] + "|" + fitxesJug1.get(i).valors[1] + "**");
         }
 
-        for (int i = 0; i < fitxes0.size(); i++) {
+        for (int i = 0; i < fitxesJug2.size(); i++) {
             JLabel lblT = new JLabel(" ");
             lblT.setPreferredSize(new Dimension(50, 50));
             lblT.setIcon(iconB2);
@@ -108,7 +108,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
 
         }
 
-        for (int i = 0; i < fitxes1.size(); i++) {
+        for (int i = 0; i < fitxesJug3.size(); i++) {
             JLabel lblT = new JLabel(" ");
             lblT.setPreferredSize(new Dimension(50, 50));
             lblT.setIcon(iconB2);
@@ -117,8 +117,8 @@ public class TaulerDomino extends JFrame implements ActionListener {
 
         }
 
-        for (int i = 0; i < fitxes2.size(); i++) {
-            ImageIcon icon = new ImageIcon("imagenes/" + fitxes2.get(i).valors[0] + fitxes2.get(i).valors[1] + "v.gif");
+        for (int i = 0; i < fitxesJug4.size(); i++) {
+            ImageIcon icon = new ImageIcon("imagenes/" + fitxesJug4.get(i).valors[0] + fitxesJug4.get(i).valors[1] + "v.gif");
             JLabel lblT = new JLabel(" ");
             lblT.setPreferredSize(new Dimension(50, 50));
             lblT.setIcon(icon);
