@@ -31,8 +31,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
         this.pack();
         this.setVisible(true);
     }
-    
-    
+
     TaulerDomino(String num, String fitx) {
 
         super("Exemple BorderLayout");
@@ -85,6 +84,15 @@ public class TaulerDomino extends JFrame implements ActionListener {
         return jugador.nom;
     }
 
+    /**
+     * Metode per mostrar les fitxes dels jugadors en el tauler. Les fitxes del
+     * jugador es mostren pero les dels contrincants es mostren en negre.
+     *
+     * @param fitxesJug1
+     * @param fitxesJug2
+     * @param fitxesJug3
+     * @param fitxesJug4
+     */
     public void MostrarFitxasJugador(ArrayList<Fitxa> fitxesJug1, ArrayList<Fitxa> fitxesJug2, ArrayList<Fitxa> fitxesJug3, ArrayList<Fitxa> fitxesJug4) {
 
         ImageIcon iconB = new ImageIcon("Assets/NegreV.png");
@@ -116,7 +124,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
         }
 
         for (int i = 0; i < fitxesJug4.size(); i++) {
-            ImageIcon icon = new ImageIcon("Assets/" + fitxesJug4.get(i).valors[0] + fitxesJug4.get(i).valors[1] + "V.gif");
+            ImageIcon icon = new ImageIcon("Assets/" + fitxesJug4.get(i).valors[0] + fitxesJug4.get(i).valors[1] + "V.png");
             JLabel lblT = new JLabel(" ");
             lblT.setPreferredSize(new Dimension(50, 50));
             lblT.setIcon(icon);
@@ -130,30 +138,35 @@ public class TaulerDomino extends JFrame implements ActionListener {
         PSud.updateUI();
     }
 
-    public void MostrarFitxasMesa(ArrayDeque<Fitxa> fitxesJugades) {
+    /**
+     * Metode per mostrar les fitxes del tauler.
+     *
+     * @param fitxesJugades
+     */
+    public void MostrarFitxesTaula(ArrayDeque<Fitxa> fitxesJugades) {
 
         pCenter.removeAll();
 
         for (Fitxa fitxa : fitxesJugades) {
-            System.out.println("*fitxasMesa*" + fitxa.getValors()[0] + "|" + fitxa.getValors()[0] + "**");
+            ImageIcon icon = new ImageIcon("imagenes/" + fitxa.getValors()[0] + fitxa.getValors()[1] + ".png");
+            JLabel fitxesJug = new JLabel(" ");
 
-            ImageIcon icon = new ImageIcon("imagenes/" + fitxa.getValors()[0] + fitxa.getValors()[1] + ".gif");
-            JLabel lblFM = new JLabel(" ");
-
-            lblFM.setPreferredSize(new Dimension(50, 50));
-            lblFM.setIcon(icon);
-            pCenter.add(lblFM);
-
+            fitxesJug.setPreferredSize(new Dimension(50, 50));
+            fitxesJug.setIcon(icon);
+            pCenter.add(fitxesJug);
         }
-
         pCenter.updateUI();
     }
-    
-    
+
+    /**
+     * Metode per a demanar al jugador si jugar o passar torn.
+     *
+     * @return
+     */
     public String mostraMenu() {
         String p;
-        String[] options = {"Passar", "jugar"};
-        int opcion = JOptionPane.showOptionDialog(null, "Escoje una Opcion:", "opciones", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+        String[] options = {"PASSAR", "JUGAR"};
+        int opcion = JOptionPane.showOptionDialog(null, "Escull una opcion:", "OPCIONS", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 
         p = String.valueOf(opcion);
         return p;
@@ -163,8 +176,8 @@ public class TaulerDomino extends JFrame implements ActionListener {
 
         boolean conseguido = false;
         String p;
-        String[] options = {"Izquiera", "Derecha"};
-        int opcion = JOptionPane.showOptionDialog(null, "En que lado quieres colocar la ficha?", "opciones", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+        String[] options = {"ESQUERRA", "DRETA"};
+        int opcion = JOptionPane.showOptionDialog(null, "Escull el costat on posar la fitxa", "OPCIONS", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 
         int x = opcion;
         if (x == 0) {
@@ -177,14 +190,19 @@ public class TaulerDomino extends JFrame implements ActionListener {
         return conseguido;
     }
 
+    /**
+     * Metode per a mostrar les fitxes que te el jugador per jugar.
+     *
+     * @param fitxes
+     * @return
+     */
     public int elejirFitxa(ArrayList<Fitxa> fitxes) {
 
         String p;
-        int numbot = fitxes.size();
 
         String[] options = {"", "", "", "", "", "", ""};
 
-        ImageIcon[] Image = {
+        ImageIcon[] imatges = {
             new ImageIcon(""),
             new ImageIcon(""),
             new ImageIcon(""),
@@ -194,14 +212,14 @@ public class TaulerDomino extends JFrame implements ActionListener {
             new ImageIcon("")
         };
 
+        /**
+         * Bucle per a emplenar les fitxes amb les fitxes del jugador.
+         */
         for (int i = 0; i < fitxes.size(); i++) {
-            ImageIcon icon = new ImageIcon("imagenes/" + fitxes.get(i).valors[0] + fitxes.get(i).valors[1] + ".gif");
-            Image[i] = icon;
+            ImageIcon icon = new ImageIcon("Assets/" + fitxes.get(i).valors[0] + fitxes.get(i).valors[1] + ".png");
+            imatges[i] = icon;
         }
-        int pos = JOptionPane.showOptionDialog(null, "Selecciona la ficha con la que jugar", "opciones", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, Image, Image[0]);
-
-        System.out.println("Has escollit **" + fitxes.get(pos).valors[1] + "|" + fitxes.get(pos).valors[0] + "**");
-
+        int pos = JOptionPane.showOptionDialog(null, "Selecciona una fitxa: ", "OPCIONS", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, imatges, imatges[0]);
         return pos;
     }
 
@@ -215,7 +233,6 @@ public class TaulerDomino extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(null, "Ha ganado: " + guanyador.getNom());
 
     }
-    
 
     @Override
     public void actionPerformed(ActionEvent e) {
