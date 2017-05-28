@@ -18,7 +18,7 @@ public class ControlText {
 
     public ControlText() {
         this.joc = new Joc(4, 28, 7);
-        this.vText = new VistaText();
+        //this.vText = new VistaText();
         this.torn = new Torn(joc);//
 
     }
