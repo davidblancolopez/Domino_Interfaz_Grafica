@@ -1,7 +1,6 @@
 package domino.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public  class Jugador {
     public String nom;//Al principio era private
@@ -16,10 +15,13 @@ public  class Jugador {
         this.nom = nom;
         this.fitxes = fitxes;
     }
-    
 
     public String getNom() {
         return nom;
+    }
+    
+    public void setNom(String nom){
+        this.nom = nom;
     }
 
     public ArrayList<Fitxa> getFitxes() {
