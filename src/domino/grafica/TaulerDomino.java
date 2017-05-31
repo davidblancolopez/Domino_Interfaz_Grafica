@@ -40,7 +40,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
 
     public void configuracio() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocation(300, 300);
+        this.setLocation(600, 400);
         this.setPreferredSize(new Dimension(600, 400));
         this.setLayout(new BorderLayout());
 
@@ -98,7 +98,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
 
         for (int i = 0; i < fitxesJug1.size(); i++) {
             JLabel lblT = new JLabel(" ");
-            lblT.setPreferredSize(new Dimension(10, 10));
+            lblT.setPreferredSize(new Dimension(50, 50));
             lblT.setIcon(iconB);
             pNord.add(lblT, BorderLayout.NORTH);
             PSud.setLayout(new GridLayout(1, 8));
@@ -106,7 +106,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
 
         for (int i = 0; i < fitxesJug2.size(); i++) {
             JLabel lblT = new JLabel(" ");
-            lblT.setPreferredSize(new Dimension(10, 10));
+            lblT.setPreferredSize(new Dimension(50, 50));
             lblT.setIcon(iconB2);
             PEst.add(lblT, BorderLayout.WEST);
             PEst.setLayout(new GridLayout(8, 1));
@@ -114,7 +114,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
 
         for (int i = 0; i < fitxesJug3.size(); i++) {
             JLabel lblT = new JLabel(" ");
-            lblT.setPreferredSize(new Dimension(10, 10));
+            lblT.setPreferredSize(new Dimension(50, 50));
             lblT.setIcon(iconB2);
             POest.add(lblT, BorderLayout.EAST);
             POest.setLayout(new GridLayout(8, 1));
@@ -124,7 +124,7 @@ public class TaulerDomino extends JFrame implements ActionListener {
         for (int i = 0; i < fitxesJug4.size(); i++) {
             ImageIcon icon = new ImageIcon("Assets/" + fitxesJug4.get(i).valors[0] + fitxesJug4.get(i).valors[1] + "V.png");
             JLabel lblT = new JLabel(" ");
-            lblT.setPreferredSize(new Dimension(10, 10));
+            lblT.setPreferredSize(new Dimension(50, 50));
             lblT.setIcon(icon);
             PSud.add(lblT, BorderLayout.SOUTH);
             PSud.setLayout(new GridLayout(1, 8));
